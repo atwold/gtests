@@ -133,7 +133,7 @@ def as_dist(X):
 # note: distance matrix should be in the form returned by L2dist()
 # if data matrix is provided, only the euclidean distance is used
 # k is the k in K-MST
-def kmst(data_matrix = None, distance_matrix = None, k = 1):
+def kmst(data_matrix=None, distance_matrix=None, k=5):
     if (data_matrix is not None) and (distance_matrix is None):
         distance_matrix = euclidean_distances(data_matrix)
     elif (data_matrix is None) and (distance_matrix is None):
@@ -149,7 +149,7 @@ def kmst(data_matrix = None, distance_matrix = None, k = 1):
 # requires the MST.so shared library file
 # to create this, run the following line
 # g++ -fPIC -shared -o MST.so MST.cpp
-def Ckmst(data_matrix = None, distance_matrix = None, k = 1):
+def Ckmst(data_matrix=None, distance_matrix=None, k=5):
     if (data_matrix is not None) and (distance_matrix is None):
         distance_matrix = euclidean_distances(data_matrix)
     elif (data_matrix is None) and (distance_matrix is None):
@@ -173,7 +173,7 @@ def Ckmst(data_matrix = None, distance_matrix = None, k = 1):
 # note: distance matrix should be symmetric
 # if data matrix is provided, only the euclidean distance is used
 # k is the k in K-NNG
-def knng(data_matrix = None, distance_matrix = None, k = 1):
+def knng(data_matrix=None, distance_matrix=None, k=5):
     if (data_matrix is not None) and (distance_matrix is None):
         distance_matrix = L2dist(data_matrix)
     elif (data_matrix is None) and (distance_matrix is None):

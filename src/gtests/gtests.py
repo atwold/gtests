@@ -9,7 +9,7 @@ from scipy.stats import chi2
 # G is the graph (MST)
 # nID is a numpy array of nodes belonging to sample n
 # mID is only used when calculating R0, its default is None
-def Rk(G, nID, mID = None):
+def Rk(G, nID, mID=None):
     G = np.triu(G)
     # a tuple of vectors
     # each vector represents a new dimension
@@ -32,7 +32,7 @@ def Rk(G, nID, mID = None):
 # expectation of Rk values
 # G is the graph (MST)
 # n is the sample size of group k
-def Uk(G, n, m = None):
+def Uk(G, n, m=None):
     N = G.shape[0]
     
     # if m is provided, calculate U0
@@ -46,7 +46,7 @@ def Uk(G, n, m = None):
 # G is the graph (MST)
 # n is the size of sample n
 # m is the size of sample m
-def sigma(G, n, m, sig0 = False):
+def sigma(G, n, m, sig0=False):
     sigma_mat = np.zeros((2, 2))
     N = G.shape[0]
     C = gu.C(G)
@@ -88,7 +88,7 @@ def S(G, nID, mID):
 # n is the size of sample k
 # m is the size of sample l
 # nreps is the number of repetitions to use for permutation calculations
-def Perm(G, n, m, nID, mID, nreps = 1e4):
+def Perm(G, n, m, nID, mID, nreps=1e4):
     nreps = int(nreps)
     N = G.shape[0]
     ID = np.arange(G.shape[0])
@@ -151,7 +151,7 @@ def W(G, nID, mID):
     return (gu.edge_count(G)-R1-R2-U0)/(np.sqrt(Sigma))
 
 # MAIN FUNCTION
-def gtests(G, nID, mID, type = "all", kappa = 1.14, perm = 0):
+def gtests(G, nID, mID, type="all", kappa=1, perm=0):
     perm = int(perm)
     n = len(nID)
     m = len(mID)
