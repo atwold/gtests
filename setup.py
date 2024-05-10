@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'gtestsPackage',         # How you named your package folder (MyLib)
   packages = ['gtests'],   # Chose the same as "name"
-  version = '0.0.5',      # Start with a small number and increase it with every change you make
+  version = '0.0.8',      # Start with a small number and increase it with every change you make
   license='GPL-3.0',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Graph-Based Two Sample Test',   # Give a short description about your library
   author = 'Alexander Wold',                   # Type in your name
